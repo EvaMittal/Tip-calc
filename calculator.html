@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(139, 139, 238);
+            text-align: center;
+            /* padding-left: 500px;
+            padding-right: 500px; */
+            /* padding:300px 300px; */
+            padding: 70px 500px;
+            background-image: url('https://www.freecodecamp.org/news/content/images/2021/06/w-qjCHPZbeXCQ-unsplash.jpg');
+        
+        }
+        .contain{
+            background-color: rgb(241, 59, 129);
+            /* margin: 10px; */
+            padding: 50px;
+        }
+        h1{
+            color: rgb(252, 8, 8);
+            /* padding: 20px; */
+        }
+        .container{
+            text-align: center;
+            /* border-radius: 30px; */
+            border-bottom-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            background-color: rgb(236, 233, 17);
+            /* padding: 0px; */
+            /* padding: 10px; */
+            /* height: 50px;
+            width: 50 px; */
+            /* border-style:;
+            border-radius: 30px;
+            border-width: 50px;
+            border-color: green; */
+        }
+        #click{
+            background-color: rgb(11, 138, 38);
+            height: 40px;
+            width: 100px;
+            font-size: 15pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TIP CALCULATOR</h1>
+    </div>
+    <br>
+    <!-- <form action="" method="post"> -->
+        <div class="contain">
+        <div>
+            <label for="billamt">Total bill amount:</label>
+            <input type="number" id="billamt" name="Bill_amount" placeholder="Enter total bill amount" >
+        </div>
+        <br>
+        <div>
+            <label for="tipp">Bill % to be tipped</label>
+            <input type="number" id="tipp" name="tip_perc" placeholder="Percent of the bill to be tipped">
+             <!-- min="0" max="100" title="Only till 100%" -->
+        </div>
+        <br>
+        <div>
+            <label for="pno">NO. of people</label>
+            <input type="number" id="pno" name="people_no" placeholder="Enter no. of people" >
+        </div>
+        <br>
+        <div>
+            <label for="tottip">Tip per person</label>
+            <input type ="" id="tottip">
+        </div>
+        <br>
+        <div>
+            <!-- <input type="button" name="calculate" id=" calc" value="Calculate" onclick="calc()"> -->
+            <button onclick="calc()" id="click">Calculate</button>
+        </div>
+        </div>
+        
+        <script>
+            
+            function calc()
+            {
+            var bill=document.getElementById("billamt").value;
+            var tipPercent=document.getElementById("tipp").value;
+            
+            var people=document.getElementById("pno").value;
+
+            var tip= ((tipPercent/100)*(bill))/people;
+
+            document.getElementById("tottip").value= tip;
+            }
+        </script>
+</body>
+</html>
